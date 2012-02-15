@@ -42,6 +42,7 @@ $tpl_options = TplSkeletonHelper::initializeTemplate($this);
 
                         <!-- tpl_toolbar -->
                         <div class="jsk_toolbar sixteen columns">
+                            <div class="jsk_date"><?php echo JFactory::getDate()->format(JText::_('DATE_FORMAT_LC1'));?></div>
                             <jdoc:include type="modules" name="toolbar" style="jsk_xhtml" />
                         </div>
                         <div class="clear"></div>
