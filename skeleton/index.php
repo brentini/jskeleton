@@ -71,6 +71,12 @@ $tpl_options = TplSkeletonHelper::initializeTemplate($this);
                 <div class="clear"></div>
                 <!-- /tpl_header_wrapper -->
 
+                <div class="jsk_message">
+                    <jdoc:include type="message" />
+                </div>
+                <div class="clear"></div>
+
+
                 <?php if ($this->countModules('top-a') || $this->countModules('top-b')): ?>
 
                     <!-- tpl_top_wrapper -->
@@ -142,10 +148,8 @@ $tpl_options = TplSkeletonHelper::initializeTemplate($this);
                                 <div class="clear"></div>
                                 <!-- /tpl_breadcrumbs -->
 
-                            <?php endif; ?>
-                                
-                            <jdoc:include type="message" />
-
+                            <?php endif; ?>                               
+                            
                             <jdoc:include type="component" />
                                 
                             <?php if ($this->countModules('innerbottom')): ?>
@@ -271,6 +275,9 @@ $tpl_options = TplSkeletonHelper::initializeTemplate($this);
         </div>
         <div class="clear"></div>
         <!-- /tpl_page_wrapper -->
+
+        <!-- resize div remove on for production templates -->
+        <div class="resize"></div>
 
     </body>
 
