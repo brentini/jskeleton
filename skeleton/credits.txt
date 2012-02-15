@@ -1,0 +1,3 @@
+Developed by Cloudhotelier. 
+Based on skeleton boilerplate by Dave Gamache (http://getskeleton.com)
+Icons by Dry Icons (http://www.dryicons.com)

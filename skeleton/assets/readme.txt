@@ -1,0 +1,1 @@
+In this folders you can add your stuff to build your Skeleton based template.
