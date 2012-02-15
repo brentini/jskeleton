@@ -11,4 +11,4 @@ We have have added a few more features and packed all as a Joomla! template embr
 - Superfish: jQuery menu plugin by Joel Birch (http://users.tpg.com.au/j_birch/plugins/superfish)
 - Responsive Menu: jQuery plugin to convert menus into a select element by Matt Kersley (https://github.com/mattkersley/Responsive-Menu)
 
-More information here: http://themes.cloudhotelier.com/jskeleton
+More information here: http://themes.cloudhotelier.com/skeleton
