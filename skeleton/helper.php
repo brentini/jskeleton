@@ -24,6 +24,7 @@ class TplSkeletonHelper {
             'font_text_style' => '',
             'font_headers' => '',
             'font_headers_style' => '',
+            'analytics' => '',
             'jquery' => 1
         );
 
