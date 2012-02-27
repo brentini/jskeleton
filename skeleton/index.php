@@ -68,7 +68,7 @@ $tpl_options = TplSkeletonHelper::initializeTemplate($this);
 
                         <!-- tpl_logo -->
                         <div class="jsk_logo five columns">
-                            <jdoc:include type="modules" name="logo" style="jsk_xhtml" />
+                            <jdoc:include type="modules" name="logo" style="none" />
                         </div>
                         <!-- /tpl_logo -->
 
