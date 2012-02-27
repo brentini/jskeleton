@@ -100,7 +100,7 @@ class TplSkeletonHelper {
                     indentString: '&nbsp;&nbsp;&nbsp;'  //string for indenting nested items
                 });
 
-                $jsk('body').on('click', 'ul.tabs > li > a', function(e) {
+                \$jsk('body').on('click', 'ul.tabs > li > a', function(e) {
 
                     //Get Location of tab's content
                     var contentLocation = \$jsk(this).attr('href');
