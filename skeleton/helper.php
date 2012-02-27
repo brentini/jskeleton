@@ -87,20 +87,41 @@ class TplSkeletonHelper {
             JFactory::getApplication()->get('jquery', true);
         }
         $document->addScript($base_url . '/js/hoverIntent.js');
-        $document->addScript($base_url . '/js/tabs.js');
         $document->addScript($base_url . '/js/superfish.js');
         $document->addScript($base_url . '/js/jquery.mobilemenu.js');
         $document->addScript($base_url . '/js/template.js');
         $document->addScriptDeclaration("
-            $(document).ready(function(){
-                $('ul.menu').superfish({delay:200});
-                $('#top-menu').mobileMenu({
-                  switchWidth: 768,                   //width (in px to switch at)
-                  topOptionText: '" . JText::_('TPL_SELECT_A_PAGE') . "',     //first option text
-                  indentString: '&nbsp;&nbsp;&nbsp;'  //string for indenting nested items
+            \$jsk = jQuery.noConflict();
+            \$jsk(document).ready(function(){
+                \$jsk('ul.menu').superfish({delay:200});
+                \$jsk('#top-menu').mobileMenu({
+                    switchWidth: 768,                   //width (in px to switch at)
+                    topOptionText: '" . JText::_('TPL_SELECT_A_PAGE') . "',     //first option text
+                    indentString: '&nbsp;&nbsp;&nbsp;'  //string for indenting nested items
                 });
+
+                $jsk('body').on('click', 'ul.tabs > li > a', function(e) {
+
+                    //Get Location of tab's content
+                    var contentLocation = \$jsk(this).attr('href');
+
+                    //Let go if not a hashed one
+                    if(contentLocation.charAt(0)== '#') {
+
+                        e.preventDefault();
+
+                        //Make Tab Active
+                        \$jsk(this).parent().siblings().children('a').removeClass('active');
+                        \$jsk(this).addClass('active');
+
+                        //Show Tab Content & add active class
+                        \$jsk(contentLocation).show().addClass('active').siblings().hide().removeClass('active');
+
+                    }
+                });
+
             });
-            ");
+        ");
 
 
         // mobile stuff
