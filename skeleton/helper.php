@@ -30,7 +30,10 @@ class TplSkeletonHelper {
 
         // template options
         foreach ($default_styles as $option => $value) {
-            $tpl_options->$option = $document->params->get($option, $value);
+            $tpl_options->$option = $value;
+            if ($document->params->get($option, $value) != -1) {
+                $tpl_options->$option = $document->params->get($option, $value);
+            }
         }
 
         // load CSS files
@@ -68,7 +71,7 @@ class TplSkeletonHelper {
         if ($tpl_options->font_headers && $tpl_options->font_headers_style) {
             $document->addStyleSheet('http://fonts.googleapis.com/css?family=' . $tpl_options->font_headers);
             $document->addStyleDeclaration("h1,h2,h3,h4,h5,h6,
-                    div.cht_menu,
+                    div.jsk_menu a,
                     div.componentheading,
                     div.itemHeader h2.itemTitle,
                     div.genericItemHeader h2.genericItemTitle,
