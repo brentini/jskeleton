@@ -1,9 +1,10 @@
 <?php
-
 /**
- * @package		Joomla.Site
- * @copyright	Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
- * @license		GNU General Public License version 2 or later; see LICENSE.txt
+ * @package     Skeleton for Joomla!
+ * @copyright   Copyright (C) 2012 CloudHotelier. All rights reserved.
+ * @license     GNU/GPL v3 or later
+ * @link        http://www.cloudhotelier.com
+ * @author      Xavier Pallicer <xpallicer@gmail.com>
  */
 // no direct access
 defined('_JEXEC') or die;
@@ -19,7 +20,7 @@ function modChrome_jsk_xhtml($module, &$params, &$attribs) {
     $classes = skeletonColumns($attribs, $params->get('moduleclass_sfx'));
 
     if (!empty($module->content)) {
-        echo '<div class="' . $classes . '">' . "\n";
+        echo '<div class="' .  htmlspecialchars($classes) . '">' . "\n";
         echo '<div class="moduletable' . htmlspecialchars($params->get('moduleclass_sfx')) . '">' . "\n";
         if ($module->showtitle != 0) {
             echo '<h3>' . $module->title . '</h3>' . "\n";

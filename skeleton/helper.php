@@ -95,7 +95,7 @@ class TplSkeletonHelper {
             \$jsk(document).ready(function(){
                 \$jsk('ul.menu').superfish({delay:200});
                 \$jsk('#jsk_menu').mobileMenu({
-                    switchWidth: 768,                   //width (in px to switch at)
+                    switchWidth: 960,                   //width (in px to switch at)
                     topOptionText: '" . JText::_('TPL_SELECT_A_PAGE') . "',     //first option text
                     indentString: '&nbsp;&nbsp;&nbsp;'  //string for indenting nested items
                 });
