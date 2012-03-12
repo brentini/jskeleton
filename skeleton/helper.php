@@ -37,10 +37,7 @@ class TplSkeletonHelper {
         }
 
         // load CSS files
-        $document->addStyleSheet($base_url . '/css/base.css');
-        $document->addStyleSheet($base_url . '/css/skeleton.css');
-        $document->addStyleSheet($base_url . '/css/layout.css');
-        $document->addStyleSheet($base_url . '/css/superfish.css');
+        $document->addStyleSheet($base_url . '/css/jskeleton.css');
         $document->addStyleSheet($base_url . '/css/template.css');
         if ($tpl_options->style && $tpl_options->style != -1) {
             $document->addStyleSheet($base_url . 'assets/styles/' . $tpl_options->style . '/style.css');
@@ -89,43 +86,11 @@ class TplSkeletonHelper {
             }
             JFactory::getApplication()->get('jquery', true);
         }
-        $document->addScript($base_url . '/js/hoverIntent.js');
-        $document->addScript($base_url . '/js/superfish.js');
-        $document->addScript($base_url . '/js/jquery.mobilemenu.js');
+        $document->addScript($base_url . '/js/jskeleton.js');
         $document->addScript($base_url . '/js/template.js');
         $document->addScriptDeclaration("
-            \$jsk = jQuery.noConflict();
-            \$jsk(document).ready(function(){
-                \$jsk('ul.menu').superfish({delay:200});
-                \$jsk('#jsk_menu').mobileMenu({
-                    switchWidth: 960,                   //width (in px to switch at)
-                    topOptionText: '" . JText::_('TPL_SELECT_A_PAGE') . "',     //first option text
-                    indentString: '&nbsp;&nbsp;&nbsp;'  //string for indenting nested items
-                });
-
-                \$jsk('body').on('click', 'ul.tabs > li > a', function(e) {
-
-                    //Get Location of tab's content
-                    var contentLocation = \$jsk(this).attr('href');
-
-                    //Let go if not a hashed one
-                    if(contentLocation.charAt(0)== '#') {
-
-                        e.preventDefault();
-
-                        //Make Tab Active
-                        \$jsk(this).parent().siblings().children('a').removeClass('active');
-                        \$jsk(this).addClass('active');
-
-                        //Show Tab Content & add active class
-                        \$jsk(contentLocation).show().addClass('active').siblings().hide().removeClass('active');
-
-                    }
-                });
-
-            });
+            document.mobileMenuText = \"".JText::_('TPL_SELECT_A_PAGE')."\"
         ");
-
 
         // mobile stuff
         $document->setMetaData('viewport', 'width=device-width, initial-scale=1, maximum-scale=1');

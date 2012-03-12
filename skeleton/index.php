@@ -266,7 +266,7 @@ $tpl_options = TplSkeletonHelper::initializeTemplate($this);
                 <?php endif; ?>
 
                 <!-- tpl_footer_wrapper -->
-                <div class="jsk_footer_wrapper">
+                <div class="jsk_footer_wrapper sixteen columns">
 
                     <!-- tpl_footer -->
                     <div class="jsk_footer">
@@ -293,9 +293,6 @@ $tpl_options = TplSkeletonHelper::initializeTemplate($this);
         </div>
         <div class="clear"></div>
         <!-- /tpl_page_wrapper -->
-
-        <!-- resize div remove on for production templates -->
-        <div class="resize"></div>
 
     </body>
 
